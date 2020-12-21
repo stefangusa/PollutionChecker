@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+    <ImageView
+            android:id="@+id/listIcon"
+            android:layout_width="@dimen/thumbnail"
+            android:layout_height="@dimen/thumbnail"
+            android:layout_marginEnd="@dimen/activity_padding_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher" />
+
+    <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/listIcon"
+            android:text="@string/city_details_placeholder"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewTitle"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@id/listIcon"
+            android:background="@color/colorError"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:textSize="18sp"
+            android:text="@string/aqi_index"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+            android:textStyle="bold" />
+
+    <TextView
+            android:id="@+id/textViewRatingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRating"
+            android:layout_toEndOf="@id/listIcon"
+            android:textSize="18sp"
+            android:text="@string/aqi_rating"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textStyle="normal" />
+
+    <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="@dimen/ic_delete"
+            android:layout_height="@dimen/ic_delete"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/padd_8"
+            android:src="@drawable/ic_delete"
+            android:background="@android:color/transparent"/>
+</RelativeLayout>

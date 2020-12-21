@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PollutionChecker</string>
+    <string name="intro">Type a city:</string>
+    <string name="example">E.g.: Bucharest</string>
+    <string name="search">Search</string>
+    <string name="back">Back</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="history">History</string>
+    <string name="cleared_message">History cleared</string>
+    <string name="delete">Delete</string>
+    <string name="city_details_placeholder">City, Province, Country</string>
+    <string name="city_details">%1$s, %2$s, %3$s</string>
+    <string name="aqi_index">AQI INDEX</string>
+    <string name="aqi_rating">AQI RATING</string>
+    <string name="aqi_good">Good</string>
+    <string name="aqi_moderate">Moderate</string>
+    <string name="aqi_unhealthyforsensitivegroups">Unhealthy for sensitive groups</string>
+    <string name="aqi_unhealthy">Unhea;thy</string>
+    <string name="aqi_veryunhealthy">Very unhealthy</string>
+    <string name="aqi_hazardous">Hazardous</string>
+    <string name="clear">Clear</string>
+    <string name="aqi_text">AQI:</string>
+    <string name="pm25_text">PM2.5:</string>
+    <string name="pm10_text">PM10:</string>
+    <string name="o3_text">O3:</string>
+    <string name="no2_text">NO2:</string>
+    <string name="so2_text">SO2:</string>
+    <string name="co_text">CO:</string>
+    <string name="empty" />
+    <string name="options">Options</string>
+</resources>
