@@ -1,6 +1,5 @@
 package ro.pub.acs.pollutionchecker.utils
 
-import androidx.core.content.ContextCompat
 import ro.pub.acs.pollutionchecker.R
 import java.text.DateFormat
 import java.util.Locale

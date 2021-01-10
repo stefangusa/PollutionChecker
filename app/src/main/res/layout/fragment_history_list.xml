@@ -8,22 +8,22 @@
             type="ro.pub.acs.pollutionchecker.history.HistoryViewModel" />
     </data>
 
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            tools:context=".history.HistoryFragment">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/historyList"
-                android:name="ro.pub.acs.pollutionchecker.HistoryFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                app:layoutManager="LinearLayoutManager"
-                tools:context=".history.HistoryFragment"
-                tools:listitem="@layout/fragment_history" />
-    </RelativeLayout>
+            android:id="@+id/historyList"
+            android:name="ro.pub.acs.pollutionchecker.HistoryFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:layoutManager="LinearLayoutManager"
+            tools:context=".history.HistoryFragment"
+            tools:listitem="@layout/fragment_history">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
 </layout>
