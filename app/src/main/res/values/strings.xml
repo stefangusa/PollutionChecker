@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PollutionChecker</string>
+    <string name="app_name">Pollution Checker</string>
     <string name="intro">Type a city:</string>
     <string name="example">E.g.: Bucharest</string>
     <string name="search">Search</string>
@@ -10,6 +10,7 @@
     <string name="delete">Delete</string>
     <string name="city_details_placeholder">City, Province, Country</string>
     <string name="city_details">%1$s, %2$s, %3$s</string>
+    <string name="city_name_placeholder">City Name Placeholder</string>
     <string name="aqi_index">AQI INDEX</string>
     <string name="aqi_rating">AQI RATING</string>
     <string name="aqi_good">Good</string>
@@ -28,4 +29,8 @@
     <string name="co_text">CO:</string>
     <string name="empty" />
     <string name="options">Options</string>
+    <string name="timestamp_placeholder">Timestamp Placeholder</string>
+    <string name="face_image">face image</string>
+    <string name="earth_polluted">earth polluted</string>
+    <string name="pollution_worried">Worried about pollution?</string>
 </resources>

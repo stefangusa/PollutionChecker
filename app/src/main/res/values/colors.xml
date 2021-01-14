@@ -25,8 +25,8 @@
     <color name="black">#000000</color>
 
     <color name="aqius_good">#4caf50</color>
-    <color name="aqius_moderate">#ffeb3b</color>
-    <color name="aqius_unhealthyforsensitivegroups">#ff9800</color>
+    <color name="aqius_unhealthyforsensitivegroups">#ffeb3b</color>
+    <color name="aqius_moderate">#ff9800</color>
     <color name="aqius_unhealthy">#f44336</color>
     <color name="aqius_veryunhealthy">#9c27b0</color>
     <color name="aqius_hazardous">#880e4f</color>

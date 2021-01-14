@@ -2,11 +2,11 @@ package ro.pub.acs.pollutionchecker;
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import ro.pub.acs.pollutionchecker.utils.Constants
 
 class MainActivity : AppCompatActivity() {
@@ -21,12 +21,13 @@ class MainActivity : AppCompatActivity() {
             when (view.id) {
                 R.id.searchButton -> {
                     val cityName = cityEditText!!.text
-                    if (!cityName.isNullOrBlank() && cityName.all {it.isLetter()}) {
+                    if (!cityName.isNullOrBlank() && cityName.all { it.isLetter() }) {
                         val intent = Intent(applicationContext, SecondaryActivity::class.java)
                         intent.putExtra(Constants.CITY_NAME, cityName.toString())
                         startActivityForResult(intent, Constants.REQ_CODE)
                     } else {
-                        Toast.makeText(applicationContext, Constants.EMPTY_ERROR, Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, Constants.EMPTY_ERROR, Toast.LENGTH_LONG)
+                            .show()
                     }
                 }
                 R.id.historyButton -> {
@@ -38,6 +39,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString("city", cityEditText!!.text.toString())
+        super.onSaveInstanceState(outState)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -46,6 +52,11 @@ class MainActivity : AppCompatActivity() {
         cityEditText = findViewById(R.id.cityEditText)
         findViewById<Button>(R.id.searchButton).setOnClickListener(buttonClickListener)
         findViewById<Button>(R.id.historyButton).setOnClickListener(buttonClickListener)
+
+        if (savedInstanceState != null) {
+            val cityName = savedInstanceState.getString("city")
+            cityEditText!!.setText(cityName)
+        }
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, intent: Intent?) {

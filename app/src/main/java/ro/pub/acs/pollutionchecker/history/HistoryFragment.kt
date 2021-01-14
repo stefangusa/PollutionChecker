@@ -46,9 +46,7 @@ class HistoryFragment : Fragment() {
         val viewModelFactory = HistoryViewModelFactory(dataSource)
 
         historyViewModel =
-            ViewModelProvider(
-                this, viewModelFactory
-            ).get(HistoryViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(HistoryViewModel::class.java)
 
         binding.historyViewModel = historyViewModel
 

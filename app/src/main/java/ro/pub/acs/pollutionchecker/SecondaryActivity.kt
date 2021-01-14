@@ -1,13 +1,11 @@
 package ro.pub.acs.pollutionchecker
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View.GONE
 import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -47,24 +45,24 @@ class SecondaryActivity : AppCompatActivity() {
 
         fun onAPIError(cityName: String) {
             Toast.makeText(
-                applicationContext, Constants.API_ERROR.replace(
+                applicationContext,
+                Constants.API_ERROR.replace(
                     Constants.CITY_NAME,
-                    cityName
-                ), Toast.LENGTH_LONG
+                    cityName),
+                Toast.LENGTH_LONG
             ).show()
             finish()
         }
 
         if (cityName != null) {
             val queue = Volley.newRequestQueue(this)
-            val getAqiRequest = StringRequest(Request.Method.GET, Constants.AQI_API_URL.replace(
-                Constants.CITY_NAME,
-                cityName
-            ),
-                { r ->
-                    val response = JSONObject(r)
-                    if (response.getString("status").equals("ok", true)) {
-                        val data = response.getJSONObject(
+            val getAqiRequest = StringRequest(
+                Request.Method.GET,
+                Constants.AQI_API_URL.replace(Constants.CITY_NAME, cityName),
+                { response ->
+                    val responseJson = JSONObject(response)
+                    if (responseJson.getString("status").equals("ok", true)) {
+                        val data = responseJson.getJSONObject(
                             "data"
                         )
                         val aqi = try {
@@ -109,11 +107,13 @@ class SecondaryActivity : AppCompatActivity() {
                         val lat = coord.getDouble(0).toString()
                         val lon = coord.getDouble(1).toString()
 
-                        val getGeoRequest = StringRequest(Request.Method.GET,
-                            Constants.GEO_API_URL.replace(
-                                Constants.LAT,
-                                lat
-                            ).replace(Constants.LON, lon),
+                        val geoApiUrl = Constants.GEO_API_URL
+                                .replace(Constants.LAT, lat)
+                                .replace(Constants.LON, lon)
+
+                        val getGeoRequest = StringRequest(
+                            Request.Method.GET,
+                            geoApiUrl,
                             { res ->
                                 val responseGeo = JSONObject(res)
                                 val region = responseGeo.getString("principalSubdivision")
